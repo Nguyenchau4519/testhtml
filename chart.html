@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biểu đồ Trọng lượng Sản phẩm theo Ngày</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="myChart"></canvas>
+
+    <script>
+        // Dữ liệu mẫu
+        const data = {
+            labels: ['Ngày 1', 'Ngày 2', 'Ngày 3'], // Ngày
+            datasets: [
+                {
+                    label: 'Sản Phẩm A',
+                    data: [300, 200, 0], // Trọng lượng sản phẩm A theo ngày
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)', // Màu nền
+                    borderColor: 'rgba(255, 99, 132, 1)', // Màu viền
+                    borderWidth: 1
+                },
+                {
+                    label: 'Sản Phẩm B',
+                    data: [800, 0, 400], // Trọng lượng sản phẩm B theo ngày
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)', // Màu nền
+                    borderColor: 'rgba(54, 162, 235, 1)', // Màu viền
+                    borderWidth: 1
+                },
+                {
+                    label: 'Sản Phẩm C',
+                    data: [500, 0, 200], // Trọng lượng sản phẩm C theo ngày
+                    backgroundColor: 'rgba(255, 206, 86, 0.2)', // Màu nền
+                    borderColor: 'rgba(255, 206, 86, 1)', // Màu viền
+                    borderWidth: 1
+                }
+            ]
+        };
+
+        // Cấu hình
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            },
+        };
+
+        // Vẽ đồ thị
+        var myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+    </script>
+</body>
+</html>
